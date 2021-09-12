@@ -2,8 +2,9 @@
 {% load static %}
 {% block title %}article column{% endblock %} {% block content %}
 <div>
-    <p class="text-right"><button class="btn btn-primary">add column</button>
-{#        <button id= "add_column" onclick="add_column()" class="btn btn-primary"> add column</button>#}
+    <p class="text-right">
+{#        <button class="btn btn-primary">add column</button>#}
+        <button id= "add_column" onclick="add_column()" class="btn btn-primary"> add column</button>
     </p> 
     <table class="table table-hover">
         <tr> 
@@ -31,22 +32,23 @@
 </div>
 </div>
 
-{#<script type="text/javascript" src='{% static "js/jquery.js" %}'></script> #}
-{#<script type="text/javascript" src="{% static 'js/layer.js'%}"></script> #}
-{#<script type="text/javascript">#}
-{#    function add_column() {#}
-{#        var index = layer.open({#}
-{#            type: 1,#}
-{#            skin: "layui-layer-rim",#}
-{#            area: ["400px", "200px"],#}
-{#            title: "新增栏目",#}
-{#            content: '<div class="text-center" style="margin-top:20px">\#}
-{#                <p> 请输入新的栏目名称</p>\#}
-{#                    <p>{{ column_form.column }}</p>\#}
-{#</div > ',#}
-{#            btn: ['确定', '取消'],#}
-{#            yes: function (index, layero) {#}
-{#                column_name = $('#id_column').val();#}
+<script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
+<script type="text/javascript" src="{% static 'js/layer.js'%}"></script>
+<script type="text/javascript">
+    function add_column() {
+        var index = layer.open({
+            type: 1,
+            skin: "layui-layer-rim",
+            area: ["400px", "200px"],
+            title: "新增栏目",
+            content: '<div class="text-center" style="margin-top:20px">\
+                <p> 请输入新的栏目名称</p>\
+                    <p>{{ column_form.column }}</p>\
+</div > ',
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                column_name = $('#id_column').val();
+                alert(column_name);
 {#                $.ajax({#}
 {#                    url: '{% url "article:article_column" %}',#}
 {#                    type: 'POST',#}
@@ -60,12 +62,12 @@
 {#                        }#}
 {#                    },#}
 {#                });#}
-{#            },#}
-{#            btn2: function (index, layero) {#}
-{#                layer.close(index);#}
-{#            }#}
-{#        });#}
-{#    }#}
+            },
+            btn2: function(index, layero){
+                layer.close(index);
+            }
+        });
+    }
 {##}
 {#    function edit_column(the, column_id){#}
 {#        var name = $(the).parents("tr").children("td").eq(1).text(); #}
@@ -119,7 +121,7 @@
 {#                }) #}
 {#            },#}
 {#        }); #}
-{#    }#}
-{#</script>#}
+    }
+</script>
 
 {% endblock %}
