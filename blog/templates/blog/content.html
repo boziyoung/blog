@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}blog article{% endblock %}
+{% block content %}
+<div class="row text-center vertical-middle-sm">
+	<h1>{{ article.title }}</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-8">
+		<p class="text-center"><span>{{ article.author.username }}</span><span style="margin-left: 20px">{{ publish }}1</span></p>
+		<div>{{ article.body }}</div>
+	</div>
+	<div class="col-xs-6 col-md-4">
+    <h2>欢迎访问我的GITHUB</h2>
+    <p>https://github.com/boziyoung</p>
+		<img width="200px" src="https://avatar.csdn.net/9/E/A/1_chengqiuming.jpg?1544877778">
+	</div>
+</div>
+{% endblock %}

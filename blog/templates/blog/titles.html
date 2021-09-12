@@ -1,0 +1,24 @@
+<!--继承已经建立的模板base.html-->
+{% extends "base.html" %}
+<!--重写块标签-->
+{% block title %}blog titles{% endblock %}
+{% block content %}
+<div class="row text-center vertical-middle-sm">
+    <h1>我的博客</h1>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+    <ul>
+    {% for blog in blogs %}
+        <!--使用a href 启超链接-->
+        <li><a href="{{ blog.id }}">{{ blog.title }}</a></li>
+    {% endfor %}
+    </ul>
+    </div>
+    <div class="col-xs-6 col-md-4">
+    <h2>欢迎访问我的GitHub</h2>
+    <p>https://github.com/boziyoung</p>
+    <img width="200px" src="https://avatar.csdn.net/9/E/A/1_chengqiuming.jpg?1544877778">
+    </div>
+</div>
+{% endblock %}

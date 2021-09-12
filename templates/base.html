@@ -1,0 +1,23 @@
+{% load static %}
+<!--load staticfiles 在django3.1中被remove -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--模板中定义的块-->
+    <title>{% block title %}{% endblock %}</title>
+    <!--引入网络样式文件-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+    {% include "header.html" %}
+    <div class="container">
+         <!--模板中定义的块-->
+         {% block content %}
+         {% endblock %}
+    </div>
+    {% include "footer.html" %}
+    {% block javascript %}{% endblock %}
+</body>
+</html>
